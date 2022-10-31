@@ -61,9 +61,9 @@ function each(coll, func) {
   // addOne( [3,6,9] ) ==> [4,7,10]
   
   // Note: using MAP
-  function addOne(array) {
-    // TODO: your code here
-  }
+  var map = array => {
+    return array.map(el => el+el)
+}
   
   /*****************************  2  ***********************/
   // Take an array and remove every second element out of that array.
@@ -74,66 +74,63 @@ function each(coll, func) {
   // None of the arrays will be empty, so you don't have to worry about that!
   
   // Note: using FILTER
-  function removeEveryOther() {
-    // TODO: your code here
-  }
+  var removeEVeryOther = array => {
+    return array.filter((el,i) => i%2 === 0? true : false)
+}
+  
   
   /*****************************  3  ***********************/
   // use map to write the following functions
   
-  function doubleAll(nums) {
-    // TODO: your work goes here
+  var double = nums =>{
+    return nums.map((el) => el *2)
   }
-  function squareAll(nums) {
-    // TODO: your work goes here
-  }
-  function stringLengths(array) {
-    // given an array of strings, return an array containing all string lengths
-    // TODO: your work goes here
+  var squarAll = array => {
+    return array.map(el => el*el)
+}
+var stringLengths = array => {
+  return array.map(el => el.length)
+
     // example: ["hello", "how", "are", "you", "doing?"] => [5, 3, 3, 3, 6]
   }
   
   /*****************************  4  ***********************/
   // use filter to write the following functions
   
-  function odds(nums) {
-    // TODO: your work goes here
-  }
-  function positives(nums) {
-    // TODO: your work goes here
-  }
-  function negatives(nums) {
-    // TODO: your work goes here
-  }
-  function evenLength(nums) {
-    // TODO: your work goes here
-  }
-  function largerThanSix(nums) {
-    // (given an array of numbers, returns those larger than 6)
-    // TODO: your work goes here
-  }
+  var odds = array => {
+    return array.filter(el => el%2 != 0 ? true : false)
+}
+var positive = array => {
+  return array.filter(el => el > 0 ? true : false)
+}
+var postive = array => {
+  return array.filter(el => el < 0 ? true : false)
+}
+  var evenLength = array => {
+    return array.filter((el,i) => i%2 === 0 ? true : false)
+}
+var largerThanSix = array => {
+  return array.filter(el => el > 6 ? true : false)
+}
   
   /*****************************  5  ***********************/
   // use reduce to write the following functions
   
-  function sum(nums) {
-    // TODO: your work goes here
-  }
+  var sum = array => {
+    return array.reduce((acc,next) => acc + next)
+}
   
-  function product(nums) {
-    // TODO: your work goes here
-  }
+var product = array => {
+  return array.reduce((acc,next) => acc * next)
+}
   
-  function allOdds(nums) {
-    // returns true if all numbers in the array are odd, false if one of them is even
-    // TODO: your work goes here
-    // example: [1, 2, 3, 11] => false
-    // [1, 3, 5, 11] => true
-  }
+var allOdds = array => {
+  return array.reduce((acc,next) => (acc+next)%2===0 ? true : false)
+}
   
-  function squareSum(nums) {
-    // TODO: your work goes here
-  }
+var sqr = array => {
+  return array.map(el => el**=2).reduce((acc,nx)=> acc+nx)
+}
   // NOTE: the square sum function so that it squares each number passed into it and then sums the results together.
   // For example, for [1, 2, 2] it should return 9 because 1^2 + 2^2 + 2^2 = 9.
   
@@ -149,3 +146,7 @@ function each(coll, func) {
   function map2(arr1, arr2, callback) {
     // TODO: your work goes here
   }
+
+  var v = (arr1,arr2) => {
+    return arr1.flatMap((el,i)=>[el*arr2[i]]);
+}
